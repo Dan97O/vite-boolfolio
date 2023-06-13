@@ -49,7 +49,7 @@ export default {
 
 <template>
     <section class="projects">
-        <div class="container">
+        <div class="container mt-5">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
                 <div class="col" v-for="project in  projects.data ">
 
@@ -61,9 +61,9 @@ export default {
             </div>
         </div>
 
-        <div class="container">
+        <div class="container d-flex justify-content-end">
             <nav aria-label="Page navigation">
-                <ul class="pagination    ">
+                <ul class="pagination">
                     <li class="page-item">
                         <button class="page-link" aria-label="Previous" v-if="projects.prev_page_url"
                             @click="prevPage(projects.prev_page_url)">

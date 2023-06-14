@@ -7,24 +7,21 @@ export default {
       type: [],
     }
   },
-
   props: ['project'],
-
   methods: {
     truncateText(text) {
       if (text.length > this.max_text_length) {
         return text.slice(0, this.max_text_length)
       }
       return text
-    }
-  }
-
+    },
+  },
 }
 </script>
 
 <template>
   <div class="card h-100 shadow">
-    <img class="card-img-top" :src="project.cover_image" alt="">
+    <img class="card-img-top" :src="'storage/' + project.cover_image" alt="">
     <div class="card-body">
       <h3 class="card-title">{{ project.title }}</h3>
       <p class="card-text">{{ truncateText(project.content) }}</p>

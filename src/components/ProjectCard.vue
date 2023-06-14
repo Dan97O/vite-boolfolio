@@ -32,6 +32,7 @@ export default {
         <p v-if="project.type">Type: {{ project.type.type }}</p>
       </div>
       <p class="card-date">Date: {{ project.date_time }}</p>
+      <router-link :to="{ name: 'single-project', params: { 'slug': project.slug } }">Read more</router-link>
       <nav>
         <a class="btn btn-primary me-2" :href="project.site_link" role="button">Visit Site</a>
         <a class="btn btn-secondary" :href="project.source_code" role="button">Source Code</a>

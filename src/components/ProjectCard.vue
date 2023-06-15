@@ -5,6 +5,8 @@ export default {
       max_text_length: 100,
       technologies: [],
       type: [],
+      base_API: 'http://127.0.0.1:8000/',
+      store: 'storage/'
     }
   },
   props: ['project'],
@@ -21,7 +23,7 @@ export default {
 
 <template>
   <div class="card h-100 shadow">
-    <img class="card-img-top" :src="'storage/' + project.cover_image" alt="">
+    <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
     <div class="card-body">
       <h3 class="card-title">{{ project.title }}</h3>
       <p class="card-text">{{ truncateText(project.content) }}</p>

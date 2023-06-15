@@ -38,9 +38,9 @@ export default {
 }
 </script>
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid text-white mt-5">
     <div class="row">
-      <div class="col">
+      <div class="col mt-3">
         <div v-if="project">
           <div class="text-center py-3">
             <img height="600" :src="base_API + store + project.cover_image" alt="">

@@ -22,17 +22,21 @@ export default {
 </script>
 
 <template>
+  <div class="container-fluid"></div>
   <div class="card h-100 shadow">
     <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
     <div class="card-body">
-      <h3 class="card-title">{{ project.title }}</h3>
-      <p class="card-text">{{ truncateText(project.content) }}</p>
-      <div v-if="project.technologies || project.type">
-        <p v-for="technology in project.technologies" :key="technology.id">
-          Technology: {{ technology.name }}
-        </p>
-        <p v-if="project.type">Type: {{ project.type.type }}</p>
-      </div>
+      <h3 class="title card-title">{{ project.title }}</h3>
+      <p class="info card-text">{{ truncateText(project.content) }}</p>
+      <p v-if="project.type">Type: {{ project.type.type }}</p>
+      Technology :
+      <ul class="d-flex list-unstyled gap-3 flex-wrap" v-if="project.technologies">
+        <li class="badge bg-success d-flex align-items-center justify-content-center"
+          v-for="technology in project.technologies">
+          {{ technology.name }}
+          <img :src="technology_image" alt="">
+        </li>
+      </ul>
       <p class="card-date">Date: {{ project.date_time }}</p>
       <router-link :to="{ name: 'single-project', params: { 'slug': project.slug } }">Read more</router-link>
       <nav>
@@ -50,6 +54,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
+
 }
 
 .card-img-top {

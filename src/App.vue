@@ -1,8 +1,11 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
+import HomeView from './views/HomeView.vue';
+
 export default {
     components: {
-        AppHeader
+        AppHeader,
+        HomeView
     }
 }
 </script>

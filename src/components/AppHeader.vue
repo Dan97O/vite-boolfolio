@@ -5,7 +5,7 @@ export default {
 </script>
 <template>
   <header>
-    <nav class="navbar bg-dark navbar-expand-lg p-0 text-white py-3">
+    <nav class="navbar bg-black navbar-expand-lg p-0 text-white py-3">
       <div class="container-fluid d-flex">
         <h3>My Portfolio</h3>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">

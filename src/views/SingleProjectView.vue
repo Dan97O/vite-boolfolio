@@ -49,8 +49,8 @@ export default {
     <div class="row mt-5">
       <div class="col-6 mt-3">
         <div v-if="project">
-          <div class="text-center py-3 position-relative">
-            <img class="img_project img-fluid" height="600" :src="base_API + store + project.cover_image" alt=""
+          <div class="img_project text-center py-3 position-relative">
+            <img class=" img-fluid" height="600" :src="base_API + store + project.cover_image" alt=""
               @click="toggleFullscreen">
             <div class="eye">
               <i class="fa-solid fa-eye fa-beat"></i>
@@ -78,7 +78,7 @@ export default {
           <li class="badge bg-success d-flex align-items-center justify-content-center"
             v-for="technology in project.technologies">
             {{ technology.name }}
-            <img :src="technology_image" alt="">
+            <img :src="technology.image" alt="">
           </li>
         </ul>
       </div>
@@ -93,34 +93,42 @@ export default {
   overflow-y: hidden;
 
   .img_project {
+    position: relative;
     max-height: 600px;
     cursor: pointer;
 
-  }
+    img {
+      max-height: 600px;
+      cursor: pointer;
+      filter: brightness(100%);
+      transition: filter 0.3s ease;
+    }
 
-  .img_project {
-    position: relative;
+    .eye {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(0, 0, 0);
+      font-size: 24px;
+      z-index: 500;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
     &:hover {
-      filter: brightness(70%);
-      cursor: pointer;
+      img {
+        filter: brightness(70%);
+      }
 
       .eye {
         display: block;
-        color: rgb(0, 0, 0);
+        opacity: 1;
       }
     }
   }
 
-  .eye {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    //color: transparent;
-    font-size: 24px;
-  }
 
 
   .fullscreen-overlay {

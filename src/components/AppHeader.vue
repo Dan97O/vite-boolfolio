@@ -39,6 +39,8 @@ nav {
   box-shadow: 12px 4px 10px -4px darkgray;
 }
 
+
+
 a {
   color: white;
 }

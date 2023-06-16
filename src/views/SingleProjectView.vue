@@ -33,7 +33,7 @@ export default {
           this.project = response.data.result
         } else {
           //console.log(router);
-          this.$router.push({ name: 'not-found' })
+          this.$router.push({ name: 'NotFound' })
           //console.log(response.data.result);
         }
       })
@@ -49,9 +49,12 @@ export default {
     <div class="row mt-5">
       <div class="col-6 mt-3">
         <div v-if="project">
-          <div class="text-center py-3">
+          <div class="text-center py-3 position-relative">
             <img class="img_project img-fluid" height="600" :src="base_API + store + project.cover_image" alt=""
               @click="toggleFullscreen">
+            <div class="eye">
+              <i class="fa-solid fa-eye fa-beat"></i>
+            </div>
           </div>
           <div class="fullscreen-overlay" v-if="showFullscreen" @click="toggleFullscreen">
             <div class="fullscreen-image-container">
@@ -92,7 +95,33 @@ export default {
   .img_project {
     max-height: 600px;
     cursor: pointer;
+
   }
+
+  .img_project {
+    position: relative;
+
+    &:hover {
+      filter: brightness(70%);
+      cursor: pointer;
+
+      .eye {
+        display: block;
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .eye {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //color: transparent;
+    font-size: 24px;
+  }
+
 
   .fullscreen-overlay {
     position: fixed;

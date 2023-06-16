@@ -12,6 +12,7 @@ export default {
       error: null,
       base_url: "http://127.0.0.1:8000/",
       projects_API: "api/projects",
+      siteLink: 'https://github.com/Dan97O?tab=repositories'
     };
   },
   methods: {
@@ -20,7 +21,9 @@ export default {
         .get(url)
         .then(response => {
           //console.log(response);
-          this.projects = response.data.projects;
+          this.projects = response.data.projects.data;
+          console.log(this.projects);
+
           this.loading = false;
         })
         .catch(error => {
@@ -44,19 +47,17 @@ export default {
 }
 </script>
 <template>
-  <section class="projects">
-    <div class="container-fluid mt-5">
+  <section class="projects py-5">
+    <div class="container-fluid">
       <div class="p-5 mb-4 bg-transparent text-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
-            previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your
-            liking.</p>
-          <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        <div class="py-3">
+          <h1 class="display-5 fw-bold">Portfolio Daniel</h1>
+          <p class="col-md-8 fs-4">Benvenuti nel mio Portfolio</p>
+          <a class="btn btn-primary me-2" :href="siteLink" role="button">Visit Site</a>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
-        <div class="col" v-for="project in projects.data ">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4 pb-5">
+        <div class="col" v-for="project in projects">
           <ProjectCard :project="project"></ProjectCard>
         </div>
       </div>

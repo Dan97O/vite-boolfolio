@@ -56,7 +56,7 @@ export default {
 
 .card-img-top {
   object-fit: cover;
-  height: 200px;
+  height: 250px;
   transition: filter 0.3s ease;
 }
 

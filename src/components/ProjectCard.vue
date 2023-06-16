@@ -23,12 +23,18 @@ export default {
 
 
 <template>
-  <div class="container-fluid">
-    <div class="card h-100 shadow">
-      <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
-      <div class="card-body">
-        <h3 class="title card-title">{{ project.title }}</h3>
-        <p class="info card-text">{{ truncateText(project.content) }}</p>
+  <div class="card h-100 border-0">
+    <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
+    <div class="card-body">
+      <h3 class="title card-title">{{ project.title }}</h3>
+      <p class="info card-text">{{ truncateText(project.content) }}</p>
+      <ul class="d-flex list-unstyled gap-1 flex-wrap m-0" v-if="project.technologies">
+        <li class="badge bg-success d-flex align-items-center justify-content-center"
+          v-for="technology in project.technologies">
+          {{ technology.name }}
+        </li>
+      </ul>
+      <div class="mt-auto">
         <router-link :to="{ name: 'single-project', params: { 'slug': project.slug } }">
           <a class="btn btn-primary" role="button">Read More</a>
         </router-link>
@@ -45,7 +51,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 10px 2px black;
 }
 
 .card-img-top {

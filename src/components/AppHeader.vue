@@ -36,6 +36,7 @@ nav {
   width: 100%;
   height: 75px;
   z-index: 400;
+  box-shadow: 12px 4px 10px -4px darkgray;
 }
 
 a {

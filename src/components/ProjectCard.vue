@@ -21,28 +21,18 @@ export default {
 }
 </script>
 
+
 <template>
-  <div class="container-fluid"></div>
-  <div class="card h-100 shadow">
-    <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
-    <div class="card-body">
-      <h3 class="title card-title">{{ project.title }}</h3>
-      <p class="info card-text">{{ truncateText(project.content) }}</p>
-      <p v-if="project.type">Type: {{ project.type.type }}</p>
-      Technology :
-      <ul class="d-flex list-unstyled gap-3 flex-wrap" v-if="project.technologies">
-        <li class="badge bg-success d-flex align-items-center justify-content-center"
-          v-for="technology in project.technologies">
-          {{ technology.name }}
-          <img :src="technology_image" alt="">
-        </li>
-      </ul>
-      <p class="card-date">Date: {{ project.date_time }}</p>
-      <router-link :to="{ name: 'single-project', params: { 'slug': project.slug } }">Read more</router-link>
-      <nav>
-        <a class="btn btn-primary me-2" :href="project.site_link" role="button">Visit Site</a>
-        <a class="btn btn-secondary" :href="project.source_code" role="button">Source Code</a>
-      </nav>
+  <div class="container-fluid">
+    <div class="card h-100 shadow">
+      <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
+      <div class="card-body">
+        <h3 class="title card-title">{{ project.title }}</h3>
+        <p class="info card-text">{{ truncateText(project.content) }}</p>
+        <router-link :to="{ name: 'single-project', params: { 'slug': project.slug } }">
+          <a class="btn btn-primary" role="button">Read More</a>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -51,19 +41,42 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  position: relative;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
   object-fit: cover;
   height: 200px;
+  transition: filter 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  filter: brightness(70%);
 }
 
 .card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-body {
+  opacity: 1;
 }
 
 .card-title {
@@ -73,10 +86,6 @@ export default {
 
 .card-text {
   margin-bottom: 16px;
-}
-
-.card-date {
-  margin-bottom: 8px;
 }
 
 .btn {

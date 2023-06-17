@@ -78,7 +78,7 @@ export default {
           <li class="badge bg-success d-flex align-items-center justify-content-center"
             v-for="technology in project.technologies">
             {{ technology.name }}
-            <img :src="technology.image" alt="">
+            <!-- <img :src="technology.image" alt=""> -->
           </li>
         </ul>
       </div>

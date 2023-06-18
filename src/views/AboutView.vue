@@ -82,8 +82,8 @@ export default {
 
     </div>
     <div class="container-fluid mt-4 text-white">
-      <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-1">
-        <div class="col">
+      <div class="row">
+        <div class="col pb-5">
           <h4 class="text-center">MY SKILLS:</h4>
           <ul class="d-flex list-unstyled flex-wrap justify-content-center">
             <li class="technology my-3" v-for="technology in technologies">
@@ -105,19 +105,13 @@ export default {
 
 <style lang="scss" scoped>
 .my_container {
-  height: calc(100vh - 48px);
-
   .card {
     box-shadow: 8px 8px 10px 2px black;
   }
 
   .my_card:hover {
-
     transform: scale(1.2);
-    /* ingrandisce la card */
     transition: transform 0.3s ease;
-    /* animazione di transizione */
-
   }
 }
 </style>

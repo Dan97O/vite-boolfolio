@@ -50,7 +50,7 @@ export default {
       <div class="col-6 mt-3">
         <div v-if="project">
           <div class="img_project text-center py-3 position-relative">
-            <img class=" img-fluid" height="600" :src="base_API + store + project.cover_image" alt=""
+            <img class="img-fluid" height="600" :src="base_API + store + project.cover_image" alt=""
               @click="toggleFullscreen">
             <div class="eye">
               <i class="fa-solid fa-eye fa-beat"></i>
@@ -69,13 +69,13 @@ export default {
         <p>{{ project.content }}</p>
         <p>Date: {{ project.date_time }}</p>
         <nav class="pb-3">
-          <a class="me-1 badge bg-secondary text-decoration-none" :href="project.site_link">Site Link</a>
-          <a class=" badge bg-primary text-decoration-none" :href="project.source_code">Source Code</a>
+          <a class="btn me-2 bg-secondary text-decoration-none text-white" :href="project.site_link">Site Link</a>
+          <a class="btn bg-primary text-decoration-none text-white" :href="project.source_code">Source Code</a>
         </nav>
         <p v-if="project.type">Type: {{ project.type.type }}</p>
         Technology :
-        <ul class="d-flex list-unstyled gap-3" v-if="project.technologies">
-          <li class="badge bg-success d-flex align-items-center justify-content-center"
+        <ul class="d-flex list-unstyled gap-3 mt-2" v-if="project.technologies">
+          <li class="badge bg-success d-flex align-items-center justify-content-center p-2"
             v-for="technology in project.technologies">
             {{ technology.name }}
             <!-- <img :src="technology.image" alt=""> -->
@@ -93,43 +93,36 @@ export default {
   overflow-y: hidden;
 
   .img_project {
-    position: relative;
     max-height: 600px;
-    cursor: pointer;
-
-    img {
-      max-height: 600px;
-      cursor: pointer;
-      filter: brightness(100%);
-      transition: filter 0.3s ease;
-    }
-
-    .eye {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-      font-size: 24px;
-      z-index: 500;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover {
-      img {
-        filter: brightness(70%);
-      }
-
-      .eye {
-        display: block;
-        opacity: 1;
-      }
-    }
   }
 
+  .eye {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    z-index: 500;
+  }
 
+  img {
+    max-height: 600px;
+    cursor: pointer;
+  }
+
+  .img_project img:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease;
+    transform: translate(-0.25rem, -0.25rem);
+    filter: brightness(70%);
+    box-shadow: 0.75rem 0.75rem rgb(61, 58, 58);
+  }
+
+  .img_project:hover .eye {
+    display: flex;
+  }
 
   .fullscreen-overlay {
     position: fixed;
@@ -157,5 +150,22 @@ export default {
     max-height: 100%;
     margin: auto;
   }
+}
+
+
+.btn:hover {
+  color: white;
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.25rem 0.25rem black;
+}
+
+.btn:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+
+.badge:hover {
+  transform: translate(-0.25rem, -0.25rem);
+  cursor: pointer;
 }
 </style>

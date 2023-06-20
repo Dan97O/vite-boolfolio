@@ -64,7 +64,7 @@ export default {
         <div class="mb-5">
           <div for="message" class="form-label">Message:</div>
           <textarea rows="8" name="message" id="message" v-model="message" class="form-control rounded"
-            :class="{ 'is-invalid': errors.message }"></textarea>
+            :class="{ 'is-invalid': errors.message }" placeholder="Type your message here"></textarea>
           <p v-for="(error, index) in errors.message" :key="`message-error-${index}`" class="invalid-feedback"> {{ error
           }} </p>
         </div>

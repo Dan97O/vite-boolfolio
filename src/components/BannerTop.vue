@@ -1,53 +1,25 @@
 <script>
 export default {
-  data() {
-    return {
-      max_text_length: 100,
-      technologies: [],
-      type: [],
-      base_API: 'http://127.0.0.1:8000/',
-      store: 'storage/'
-    }
-  },
-  props: ['project'],
-  methods: {
-    truncateText(text) {
-      if (text.length > this.max_text_length) {
-        return text.slice(0, this.max_text_length)
-      }
-      return text
-    },
-  },
+  name: 'BannerTop'
 }
 </script>
-
-
 <template>
-  <div class="card h-100 border-0">
-    <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
-    <div class="card-body">
-      <h3 class="title card-title">{{ project.title }}</h3>
-      <p class="info card-text">{{ truncateText(project.content) }}</p>
-      <ul class="d-flex list-unstyled gap-1 flex-wrap m-0" v-if="project.technologies">
-        <li class="badge bg-success d-flex align-items-center justify-content-center"
-          v-for="technology in project.technologies">
-          {{ technology.name }}
-        </li>
-      </ul>
-      <router-link class="mt-auto" :to="{ name: 'single-project', params: { 'slug': project.slug } }">
-        <a class="btn" role="button">
-          <strong>
-            READ MORE
-          </strong>
-          <div id="container-stars">
-            <div id="stars"></div>
-          </div>
-          <div id="glow">
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div>
-        </a>
-      </router-link>
+  <div class="p-5 mb-4 bg-transparent text-light rounded-3">
+    <div class="py-3">
+      <h1 class="display-5 fw-bold">Portfolio Daniel</h1>
+      <p class="col-md-8 fs-4">Benvenuti nel mio Portfolio</p>
+      <a :href="siteLink" class="btn" type="button">
+        <strong>
+          Visit Site
+        </strong>
+        <div id="container-stars">
+          <div id="stars"></div>
+        </div>
+        <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -55,77 +27,23 @@ export default {
 
 
 <style lang="scss" scoped>
-.card {
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 8px 8px 10px 2px black;
-}
-
-.card:hover {
-  transform: scale(1.04);
-  transition: transform 0.3s ease;
-}
-
-.card-img-top {
-  object-fit: cover;
-  height: 300px;
-  transition: filter 0.3s ease;
-  object-position: top;
-}
-
-.card:hover .card-img-top {
-  filter: brightness(70%);
-}
-
-.card-body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 16px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover .card-body {
-  opacity: 1;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-}
-
-.card-text {
-  margin-bottom: 16px;
-}
-
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 2rem;
-  margin-top: 8px;
-  list-style: none;
+  width: 13rem;
+  height: 3rem;
   background-size: 300% 300%;
   backdrop-filter: blur(1rem);
   border-radius: 5rem;
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
-  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #1815b9 45%, #c6c92d 67%, #0044ff 87%);
+  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
+  box-shadow: 8px 8px 10px 2px black;
+
 }
 
 #container-stars {
@@ -162,11 +80,11 @@ strong {
 }
 
 .circle:nth-of-type(1) {
-  background: rgba(94, 83, 254, 0.636);
+  background: rgba(254, 83, 186, 0.636);
 }
 
 .circle:nth-of-type(2) {
-  background: rgba(234, 186, 81, 0.704);
+  background: rgba(142, 81, 234, 0.704);
 }
 
 .btn:hover #container-stars {
@@ -179,14 +97,14 @@ strong {
 }
 
 .btn:active {
-  border: double 4px #6cff31;
+  border: double 4px #FE53BB;
   background-origin: border-box;
   background-clip: content-box, border-box;
   animation: none;
 }
 
 .btn:active .circle {
-  background: #53cefe;
+  background: #FE53BB;
 }
 
 #stars {
@@ -278,4 +196,3 @@ strong {
   }
 }
 </style>
-

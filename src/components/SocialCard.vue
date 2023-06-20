@@ -1,6 +1,14 @@
 <script>
 export default {
-  name: 'SocialCard'
+  name: 'SocialCard',
+  data() {
+    return {
+      linkedin_link: 'https://www.linkedin.com/in/daniel-oddo-45688b113',
+      siteLink: 'https://github.com/Dan97O?tab=repositories',
+      instagram_link: 'https://instagram.com/daniel.oddo',
+      facebook_link: 'https://it-it.facebook.com/daniel.oddo'
+    }
+  },
 }
 </script>
 
@@ -69,7 +77,7 @@ export default {
 
 .card_social:hover {
   box-shadow: 8px 8px 10px 2px black;
-
+  cursor: pointer;
 }
 
 .card_social:hover span {

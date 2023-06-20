@@ -14,10 +14,6 @@ export default {
       TechnologiesPath: "api/technologies",
       base_API: 'http://127.0.0.1:8000/',
       store: 'storage/',
-      linkedin_link: 'https://www.linkedin.com/in/daniel-oddo-45688b113',
-      siteLink: 'https://github.com/Dan97O?tab=repositories',
-      instagram_link: 'https://instagram.com/daniel.oddo',
-      facebook_link: 'https://it-it.facebook.com/daniel.oddo'
     }
   },
   methods: {

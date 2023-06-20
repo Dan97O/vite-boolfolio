@@ -57,8 +57,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   position: relative;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  //border: 1px solid #ccc;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 8px 8px 10px 2px black;
 }
@@ -70,7 +70,7 @@ export default {
 
 .card-img-top {
   object-fit: cover;
-  height: 300px;
+  height: 350px;
   transition: filter 0.3s ease;
   object-position: top;
 }
@@ -102,11 +102,11 @@ export default {
 
 .card-title {
   font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 2rem;
 }
 
 .card-text {
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
 }
 
 .btn {

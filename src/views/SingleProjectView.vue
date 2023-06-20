@@ -110,6 +110,7 @@ export default {
   img {
     max-height: 600px;
     cursor: pointer;
+    border-radius: 20px;
   }
 
   .img_project img:hover {

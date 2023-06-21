@@ -1,25 +1,66 @@
 <script>
 export default {
-  name: 'BannerTop'
+  name: 'BannerTop',
+  data() {
+    return {
+      siteLink: 'https://github.com/Dan97O?tab=repositories'
+    };
+  },
 }
 </script>
 <template>
-  <div class="p-5 mb-4 bg-transparent text-light rounded-3">
+  <div class="banner py-5 bg-transparent text-light rounded-3">
     <div class="py-3">
-      <h1 class="display-5 fw-bold">Portfolio Daniel</h1>
-      <p class="col-md-8 fs-4">Benvenuti nel mio Portfolio</p>
-      <a :href="siteLink" class="btn" type="button">
-        <strong>
-          Visit Site
-        </strong>
-        <div id="container-stars">
-          <div id="stars"></div>
+      <div class="line_block">
+        <div class="title">
+          <span class="block"></span>
+          <div class="special_text ps-3">
+            <ul>
+              <li>H</li>
+              <li>E</li>
+              <li>L</li>
+              <li>L</li>
+              <li>O</li>
+            </ul>
+          </div>
         </div>
-        <div id="glow">
-          <div class="circle"></div>
-          <div class="circle"></div>
+        <div class="advance">
+          <div class="block"></div>
+          <h3 class="ps-3">I am Daniel</h3>
         </div>
-      </a>
+        <div class="advance_second">
+          <div class="block"></div>
+          <h3 class="ps-3">Welcome to my portfolio</h3>
+        </div>
+        <div class="subtitle">
+          <h3 class="carousel">
+            <div class="card">
+              <span class="text-white">Developer.</span>
+              <div>
+                <ul class="flip3 p-0">
+                  <li>Front-End</li>
+                  <li>Web</li>
+                  <li>Back-End</li>
+                </ul>
+              </div>
+            </div>
+          </h3>
+        </div>
+      </div>
+      <div class=" d-flex justify-content-center mt-5">
+        <a :href="siteLink" class="btn" type="button">
+          <strong>
+            Visit Site GitHub
+          </strong>
+          <div id="container-stars">
+            <div id="stars"></div>
+          </div>
+          <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -27,11 +68,368 @@ export default {
 
 
 <style lang="scss" scoped>
+.banner {
+  height: calc(100vh - 48px);
+}
+
+.title {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 100px;
+  margin-top: 10px;
+
+  .block {
+    width: 0%;
+    height: inherit;
+    background-image: linear-gradient(#262626 10%, #1d55ce 100%);
+    position: absolute;
+    animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 1s;
+    display: flex;
+    border-radius: 20px;
+  }
+
+}
+
+.special_text {
+  ul {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    letter-spacing: 15px;
+    text-shadow: none;
+    display: flex;
+    padding: 0;
+  }
+
+  li {
+    font-size: 5rem;
+    animation: animate 2.1s infinite linear;
+    animation-delay: 2.1s;
+    opacity: 0;
+    font-size: 70px;
+    color: #0b2d77;
+    font-weight: bolder;
+  }
+
+  @keyframes animate {
+    0% {
+      color: #1d55ce;
+      text-shadow: 0 0 7px #1d55ce, 0 0 20px #ffd900;
+      opacity: 1;
+    }
+
+    18% {
+      color: #2a86ff;
+      text-shadow: none;
+      opacity: 1;
+    }
+
+    20% {
+      color: #1d55ce;
+      text-shadow: 0 0 7px #1d55ce, 0 0 20px #ffd900;
+      opacity: 1;
+    }
+
+    30% {
+      color: #2a86ff;
+      text-shadow: none;
+      opacity: 1;
+    }
+
+    35% {
+      color: #1d55ce;
+      text-shadow: 0 0 7px #1d55ce, 0 0 20px #ffd900;
+      opacity: 1;
+    }
+
+    70% {
+      color: #2a86ff;
+      text-shadow: none;
+      opacity: 1;
+    }
+
+    85% {
+      color: #1d55ce;
+      text-shadow: 0 0 7px #1d55ce, 0 0 20px #ffd900;
+      opacity: 1;
+    }
+
+    90% {
+      color: #ff9408;
+      text-shadow: none;
+      opacity: 1;
+    }
+
+    100% {
+      color: #1d55ce;
+      text-shadow: 0 0 7px #1d55ce, 0 0 20px #ffd900;
+      opacity: 1;
+    }
+  }
+
+
+  ul li:nth-child(1) {
+    animation-delay: 2.2s;
+  }
+
+  ul li:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  ul li:nth-child(3) {
+    animation-delay: 2.6s;
+  }
+
+  ul li:nth-child(4) {
+    animation-delay: 2.8s;
+
+  }
+
+  ul li:nth-child(5) {
+    animation-delay: 3s;
+  }
+
+}
+
+
+.advance {
+  width: 100%;
+  position: relative;
+  display: flex;
+  //align-items: center;
+  height: 100px;
+  margin-top: 2rem;
+
+  .block {
+    width: 0%;
+    height: inherit;
+    background-image: linear-gradient(#262626 10%, #1d55ce 100%);
+    position: absolute;
+    animation: secBlock 2.2s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 2.2s;
+    display: flex;
+    border-radius: 20px;
+
+  }
+
+  h3 {
+    animation: secFadeIn 2.2s forwards;
+    animation-delay: 3.7s;
+    opacity: 0;
+    font-size: 4rem;
+  }
+}
+
+.advance_second {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 100px;
+  margin-top: 10px;
+
+  .block {
+    width: 0%;
+    height: inherit;
+    background-image: linear-gradient(#262626 10%, #1d55ce 100%);
+    position: absolute;
+    animation: secBlock 2.2s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 2.2s;
+    display: flex;
+    border-radius: 20px;
+
+  }
+
+  h3 {
+    animation: secFadeIn 2.2s forwards;
+    animation-delay: 3.7s;
+    opacity: 0;
+    font-size: 4rem;
+  }
+}
+
+
+.carousel {
+  opacity: 0;
+  animation: secFadeIn 2s forwards;
+  animation-delay: 4s;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  font-size: 4rem;
+  color: #eee;
+  padding: 3rem 0;
+  height: 100px;
+
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #1d55ce81;
+    padding: 0 2rem;
+    border-radius: 25px;
+  }
+
+  div {
+    text-align: end;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: 100px;
+    padding-top: 10px;
+    margin-top: -10px;
+
+    li {
+      color: #ff9408;
+      height: 45px;
+      margin-bottom: 45px;
+      display: block;
+    }
+  }
+}
+
+.flip3 {
+  animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@keyframes flip3 {
+  0% {
+    margin-top: -270px;
+  }
+
+  5% {
+    margin-top: -180px;
+  }
+
+  33% {
+    margin-top: -180px;
+  }
+
+  38% {
+    margin-top: -90px;
+  }
+
+  66% {
+    margin-top: -90px;
+  }
+
+  71% {
+    margin-top: 0px;
+  }
+
+  99.99% {
+    margin-top: 0px;
+  }
+
+  100% {
+    margin-top: -270px;
+  }
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: white;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+    background: white;
+    opacity: 1;
+    bottom: 60px;
+  }
+
+  65% {
+    width: 17px;
+    height: 17px;
+    bottom: 0px;
+    width: 30px
+  }
+
+  80% {
+    width: 20px;
+    height: 20px;
+    bottom: 35px
+  }
+
+  100% {
+    width: 17px;
+    height: 17px;
+    background: rgb(65, 38, 38);
+    border: 0px solid #222;
+    bottom: 28px;
+
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 13rem;
+  width: 15rem;
   height: 3rem;
   background-size: 300% 300%;
   backdrop-filter: blur(1rem);
@@ -39,11 +437,11 @@ export default {
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
-  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #2927bd 10%, #1d10d6 45%, #232ecc 67%, #0044ff 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
   box-shadow: 8px 8px 10px 2px black;
-
+  margin-top: 7rem;
 }
 
 #container-stars {

@@ -3,7 +3,7 @@ export default {
   name: 'SocialCard',
   data() {
     return {
-      linkedin_link: 'https://www.linkedin.com/in/daniel-oddo-45688b113',
+      linkedin_link: 'https://www.linkedin.com/in/oddodaniel',
       siteLink: 'https://github.com/Dan97O?tab=repositories',
       instagram_link: 'https://instagram.com/daniel.oddo',
       facebook_link: 'https://it-it.facebook.com/daniel.oddo'
@@ -14,7 +14,7 @@ export default {
 
 
 <template>
-  <div class="card_social">
+  <div class="card_social px-2">
     <span>Social</span>
     <a class="social-link" :href="linkedin_link">
       <img height="25" src="https://www.vectorlogo.zone/logos/linkedin/linkedin-tile.svg" alt="">

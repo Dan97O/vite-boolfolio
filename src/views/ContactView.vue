@@ -39,7 +39,7 @@ export default {
 }
 </script>
 <template>
-  <section class="contact-me py-5 vh-100 d-flex align-items-center">
+  <section class="contact-me bg py-5 vh-100 d-flex align-items-center">
     <div class="container">
       <div v-if="success" class="alert alert-success text-start" role="alert">
         Messaggio inviato con successo!
@@ -76,5 +76,6 @@ export default {
 </template>
 
 <style lang="sass" scoped>
+
 
 </style>

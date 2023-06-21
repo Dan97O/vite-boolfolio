@@ -54,8 +54,14 @@ export default {
 </script>
 <template>
   <section class="projects py-5">
-    <div class="container-fluid">
-      <BannerTop></BannerTop>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="col">
+          <BannerTop></BannerTop>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid px-3">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-3 g-3 pb-5">
         <PlaceHolder v-if="loading" :loading="loading"></PlaceHolder>
         <div class="col mb-5" v-for="project in projects">
@@ -90,6 +96,9 @@ export default {
 <style lang="scss" scoped>
 .projects {
   padding-top: 3rem;
-  background-image: linear-gradient(#262626 50%, #1d55ce 100%);
+  background-image: url('https://res.cloudinary.com/practicaldev/image/fetch/s--StRkI7Ze--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://codesandtags.github.io/blog/static/0c42bdee6c2a7e213cacc2b33ac3039c/a0304/hero.webp');
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
 }
 </style>

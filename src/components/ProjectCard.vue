@@ -23,7 +23,7 @@ export default {
 
 
 <template>
-  <div class="card h-100 border-0">
+  <div id="project_card" class="card h-100 border-0">
     <img class="card-img-top" :src="base_API + store + project.cover_image" alt="">
     <div class="card-body">
       <h3 class="title card-title">{{ project.title }}</h3>
@@ -57,7 +57,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   position: relative;
-  //border: 1px solid #ccc;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 8px 8px 10px 2px black;

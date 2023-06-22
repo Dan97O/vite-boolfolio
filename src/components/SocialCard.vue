@@ -22,12 +22,6 @@ export default {
     <a class="social-link" :href="siteLink">
       <img height="25" src="https://www.vectorlogo.zone/logos/github/github-tile.svg" alt="">
     </a>
-    <a class="social-link" :href="instagram_link">
-      <img height="25" src="https://www.vectorlogo.zone/logos/instagram/instagram-icon.svg" alt="">
-    </a>
-    <a class="social-link" :href="facebook_link">
-      <img height="25" src="https://www.vectorlogo.zone/logos/facebook/facebook-tile.svg" alt="">
-    </a>
   </div>
 </template>
 

@@ -3,7 +3,18 @@
 import SocialCard from './SocialCard.vue';
 export default {
   name: "TextPortfolio",
-  components: { SocialCard }
+  components: { SocialCard },
+  data() {
+    return {
+      fileUrl: '../../public/pdfdiprova.pdf'
+    }
+  },
+  methods: {
+    downloadPDF() {
+      window.open(this.fileUrl, '_blank');
+    }
+  }
+
 }
 </script>
 <template>
@@ -39,9 +50,27 @@ export default {
       Sono entusiasta di
       intraprendere nuove sfide e di contribuire a progetti emozionanti nel futuro!
     </p>
-    <SocialCard></SocialCard>
+    <div class="d-flex justify-content-between align-items-center">
+      <SocialCard></SocialCard>
+      <div>
+        <button @click="downloadPDF" class="btn border-0" style="">
+          <i class="fa-solid fa-download me-1"></i>Download CV PDF</button>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.btn {
+  background-color: #4453a6;
+  color: white;
+
+  &:hover {
+    background-color: #0044ff;
+    box-shadow: 8px 8px 10px 2px black;
+  }
+}
+</style>

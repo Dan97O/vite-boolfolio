@@ -32,7 +32,7 @@ export default {
           <div class="block"></div>
           <h3 class="ps-3">Welcome to my portfolio</h3>
         </div>
-        <div class="subtitle">
+        <div class="subtitle d-none d-xl-block">
           <h3 class="carousel">
             <div class="card">
               <span class="text-white">Developer.</span>
@@ -47,7 +47,7 @@ export default {
           </h3>
         </div>
       </div>
-      <div class=" d-flex justify-content-center mt-5">
+      <div class="d-flex justify-content-center mt-5 d-none d-xl-flex">
         <a :href="siteLink" class="btn" type="button">
           <strong>
             Visit Site GitHub
@@ -60,6 +60,20 @@ export default {
             <div class="circle"></div>
           </div>
         </a>
+      </div>
+      <div class="d-flex justify-content-end me-5 d-none d-xl-flex">
+        <div>
+          <div class="pb-3 text-white flex-column align-items-end ">
+            <a href="#project_card" class="text-decoration-none text-white">
+              <h3 class="fa-beat-fade">Visit my projects</h3>
+            </a>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <a href="#project_card" class="text-decoration-none ">
+              <i class="fa-solid fa-arrow-down-long fa-beat-fade fa-4x pt-3" style="color: #1d55ce;"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -205,7 +219,7 @@ export default {
   .block {
     width: 0%;
     height: inherit;
-    background-image: linear-gradient(#262626 10%, #1d55ce 100%);
+    background-image: linear-gradient(#ffffff 50%, #1d55ce 100%);
     position: absolute;
     animation: secBlock 2.2s cubic-bezier(.74, .06, .4, .92) forwards;
     animation-delay: 2.2s;
@@ -232,7 +246,7 @@ export default {
   .block {
     width: 0%;
     height: inherit;
-    background-image: linear-gradient(#262626 10%, #1d55ce 100%);
+    background-image: linear-gradient(#ffffff 50%, #1d55ce 100%);
     position: absolute;
     animation: secBlock 2.2s cubic-bezier(.74, .06, .4, .92) forwards;
     animation-delay: 2.2s;

@@ -29,7 +29,7 @@ export default {
         .then(response => {
           //console.log(response);
           this.projects = response.data.projects.data;
-          console.log(this.projects);
+          //console.log(this.projects);
           this.loading = false;
         })
         .catch(error => {

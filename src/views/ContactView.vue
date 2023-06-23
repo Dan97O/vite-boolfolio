@@ -71,11 +71,9 @@ export default {
         <button button type=" submit" class="btn btn-primary text-white me-2" :disabled="loading">{{ loading ?
           'Sending...' : 'Send' }}</button>
       </form>
+
     </div>
   </section>
 </template>
 
-<style lang="sass" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>

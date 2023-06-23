@@ -1,36 +1,15 @@
 <script>
 import axios from 'axios'
 import TextPortfolio from '../components/TextPortfolio.vue'
+import MySkills from '../components/MySkills.vue';
+import ImHere from '../components/ImHere.vue';
 export default {
   name: 'AboutView',
   components: {
     TextPortfolio,
+    MySkills,
+    ImHere
   },
-  data() {
-    return {
-      project: null,
-      loading: true,
-      technologies: [],
-      TechnologiesPath: "api/technologies",
-      base_API: 'http://127.0.0.1:8000/',
-      store: 'storage/',
-    }
-  },
-  methods: {
-    getTechnologies(url) {
-      axios
-        .get(url)
-        .then((response) => {
-          this.loading = false;
-          this.technologies = response.data.technologies
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  }, mounted() {
-    this.getTechnologies(this.base_API + this.TechnologiesPath)
-  }
 }
 </script>
 
@@ -40,7 +19,7 @@ export default {
       <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-2">
         <div class="card w-100 mt-5 bg-transparent">
           <div class="row no-gutters">
-            <div class="col-6 d-flex align-items-center d-none d-lg-block">
+            <div class="col-6  d-flex align-items-center justify-content-center d-none d-lg-flex">
               <img
                 src="https://camo.githubusercontent.com/c7e2ca28de4726d848194ebbb60d6f91ff1188a781fb370e0aa8dab942cc9c50/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313637302f312a5a53566d57476363317765454e6230536861775778772e676966"
                 alt="" class="card-img img-fluid ">
@@ -52,20 +31,18 @@ export default {
         </div>
       </div>
     </div>
-    <div class="container-fluid mt-4 text-white">
+    <div class="container-fluid mt-5 text-white">
       <div class="row">
         <div class="col pb-5">
-          <h4 class="text-center">MY SKILLS:</h4>
-          <ul class="d-flex list-unstyled flex-wrap justify-content-center">
-            <li class="technology my-3" v-for="technology in technologies">
-              <div class="me-5 my_card card bg-transparent text-white">
-                <img class="text-center card-img-top" style="width: 100px; height: 100px;"
-                  :src="'http://127.0.0.1:8000/storage/public/' + technology.image" alt="">
-                <p class="text-center"> <strong>{{ technology.name }} </strong> </p>
-              </div>
-            </li>
-          </ul>
+          <MySkills></MySkills>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-3">
+    <div class="row">
+      <div class="col">
+        <ImHere></ImHere>
       </div>
     </div>
   </div>

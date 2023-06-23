@@ -5,8 +5,6 @@ export default {
     return {
       linkedin_link: 'https://www.linkedin.com/in/oddodaniel',
       siteLink: 'https://github.com/Dan97O?tab=repositories',
-      instagram_link: 'https://instagram.com/daniel.oddo',
-      facebook_link: 'https://it-it.facebook.com/daniel.oddo'
     }
   },
 }

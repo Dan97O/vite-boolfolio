@@ -6,7 +6,7 @@ export default {
   components: { SocialCard },
   data() {
     return {
-      fileUrl: '../../public/Daniel-Oddo-cv.pdf'
+      fileUrl: '../assets/Daniel-Oddo-cv.pdf'
     }
   },
   methods: {

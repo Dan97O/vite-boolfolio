@@ -5,7 +5,7 @@ export default {
       max_text_length: 100,
       technologies: [],
       type: [],
-      base_API: 'https://portfolio.danieloddo.com/',
+      base_API: 'http://127.0.0.1:8000/',
       store: 'storage/'
     }
   },

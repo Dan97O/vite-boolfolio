@@ -17,7 +17,7 @@ export default {
       loading: true,
       projects: [],
       error: null,
-      base_url: "http://danieloddo.com",
+      base_url: "http://danieloddo.com/",
       projects_API: "api/projects",
       siteLink: 'https://github.com/Dan97O?tab=repositories'
     };

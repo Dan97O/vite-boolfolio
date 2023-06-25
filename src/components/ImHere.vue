@@ -31,7 +31,7 @@ export default {
       </div>
       <div class="d-flex justify-content-between align-items-center mt-4">
         <SocialCard></SocialCard>
-        <button @click="downloadPDF" class="btn btn-primary">
+        <button @click="downloadPDF" download="Daniel-Oddo-cv.pdf" class="btn btn-primary">
           <i class="fa-solid fa-download me-1"></i>Download CV PDF</button>
       </div>
     </div>

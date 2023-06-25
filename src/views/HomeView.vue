@@ -17,7 +17,7 @@ export default {
       loading: true,
       projects: [],
       error: null,
-      base_url: "https://provaportfolio.danieloddo.com/",
+      base_url: "http://127.0.0.1:8000/",
       projects_API: "api/projects",
       siteLink: 'https://github.com/Dan97O?tab=repositories'
     };

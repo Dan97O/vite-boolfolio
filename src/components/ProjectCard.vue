@@ -5,7 +5,8 @@ export default {
       max_text_length: 100,
       technologies: [],
       type: [],
-      base_API: 'http://127.0.0.1:8000/',
+      //base_API: 'http://127.0.0.1:8000/',
+      base_API: 'https://danieloddo.com/',
       store: 'storage/'
     }
   },

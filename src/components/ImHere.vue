@@ -6,12 +6,13 @@ export default {
   components: { SocialCard },
   data() {
     return {
-      fileUrl: '../../public/danielOddoCv.pdf'
+      /* fileUrl: '../../public/danielOddoCv.pdf' */
     }
   },
   methods: {
     downloadPDF() {
-      window.open(this.fileUrl, '_blank');
+      const fileUrl = '/public/danielOddoCv.pdf';
+      window.open(fileUrl, '_blank');
     }
   },
 }

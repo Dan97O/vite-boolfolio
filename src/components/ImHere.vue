@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     downloadPDF() {
-      const fileUrl = '/public/danielOddoCv.pdf';
+      const fileUrl = '/assets/danielOddoCv.pdf';
       window.open(fileUrl, '_blank');
     }
   },

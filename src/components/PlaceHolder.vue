@@ -12,7 +12,8 @@ export default {
   <div class="d-flex gap-3">
     <div class="col-md-12" v-for="n in 3">
       <div class="card" aria-hidden="true">
-        <img height="150" src="" class="card-img-top" alt="">
+        <img height="150" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+          class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title placeholder-glow">
             <span class="placeholder col-6"></span>

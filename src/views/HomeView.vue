@@ -63,7 +63,7 @@ export default {
     </div>
     <div class="container-fluid px-3">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-3 g-3 pb-5">
-        <!--  <PlaceHolder v-if="loading" :loading="loading"></PlaceHolder> -->
+        <PlaceHolder v-if="loading" :loading="loading"></PlaceHolder>
         <div class="col mb-5" v-for="project in projects">
           <ProjectCard :project="project"></ProjectCard>
         </div>
